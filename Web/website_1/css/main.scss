@@ -1,0 +1,165 @@
+@import 'reset';
+@import 'breakpoints';
+@import 'grid';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
+
+$base-color: rgba(255,122,83,1);
+
+%text-shadow{
+	text-shadow: 0px 2px 2px rgba(0,0,0,0.25);
+}
+
+body{
+	background-color: #fff;
+	font-family: 'Roboto', sans-serif;
+
+
+}
+
+.delimiter{
+	@include desktop{
+		max-width: 80%;
+	}
+}
+
+%grid-style{
+	background-color: #f1f1f1;
+	padding: 1rem;
+	border-radius: 0.25rem;
+}
+
+.navbar{
+	grid-row: 1;
+	grid-column: span 12;
+	line-height: 4rem;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	@extend %text-shadow;
+
+	.brand{
+		font-family: 'Roboto Slab', sans-serif;
+		font-weight: bold;
+		font-size: 1.25rem;
+		text-transform: uppercase;
+	}
+
+	.nav{
+		text-transform: lowercase;
+
+		ul{
+			text-align: right;
+
+			li{
+				display: inline-block;
+				padding: 0 1rem;
+				border-bottom: 4px solid transparent;
+
+				&:hover{
+					border-bottom: 4px solid rgba(255, 255, 255, 1);
+
+				}
+
+				a{
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.fixed{
+	background: rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+	color: $base-color;
+	text-shadow: none;
+
+	.nav{
+		ul{
+			li{
+				border-bottom: 4px solid transparent;
+
+				&:hover{
+					border-bottom: 4px solid $base-color;
+				}
+
+				a{
+					color: $base-color;
+				}
+			}
+		}
+	}
+
+}
+
+.header{
+	grid-column: span 12;
+	display:grid;
+	height: 50vh;
+	color: #fff;
+	align-items: center;
+	justify-items: center;
+	@extend %text-shadow;
+	h1{
+		font-size: 3rem;
+		font-family: 'Roboto Slab';
+	}
+}
+
+.divider{
+	grid-column: span 12;
+	display:grid;
+
+	svg {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 2vw;
+  /* set height to pixels if you want angle to change with screen width */
+}
+}
+
+#header{
+	background: rgb(255,99,99);
+	background: -moz-linear-gradient(90deg, rgba(255,99,99,1) 0%, rgba(255,122,83,1) 50%, rgba(255,145,66,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(255,99,99,1) 0%, rgba(255,122,83,1) 50%, rgba(255,145,66,1) 100%);
+	background: linear-gradient(90deg, rgba(255,99,99,1) 0%, rgba(255,122,83,1) 50%, rgba(255,145,66,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff6363",endColorstr="#ff9142",GradientType=1); 
+}
+
+.aside{
+	@extend %grid-style;
+	grid-row: 1;
+	grid-column: span 12;
+	@include tablet-landscape{
+		grid-row: 1;
+		grid-column: span 4;
+	}
+}
+
+.main{
+	@extend %grid-style;
+	grid-row: 2;
+	grid-column: span 12;
+	height: 100vh;
+	@include tablet-landscape{
+		grid-row: 1;
+		grid-column: span 8;
+	}
+}
+
+.footer{
+	@extend %grid-style;
+	grid-row: 3;
+	grid-column: span 12;
+	@include tablet-landscape{
+		grid-row: 2;
+		grid-column: span 12;
+	}
+}
+

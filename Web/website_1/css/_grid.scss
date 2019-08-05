@@ -1,0 +1,42 @@
+@mixin grid($col){
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat($col, 1fr);
+}
+.grid-12{
+	@include grid(12);
+}
+.grid-11{
+	@include grid(11);
+}
+.grid-10{
+	@include grid(10);
+}
+.grid-9{
+	@include grid(9);
+}
+.grid-8{
+	@include grid(8);
+}
+.grid-7{
+	@include grid(7);
+}
+.grid-6{
+	@include grid(6);
+}
+.grid-5{
+	@include grid(5);
+}
+.grid-4{
+	@include grid(4);
+}
+.grid-3{
+	@include grid(3);
+}
+.grid-2{
+	@include grid(2);
+}
+.grid-1{
+	@include grid(1);
+}
